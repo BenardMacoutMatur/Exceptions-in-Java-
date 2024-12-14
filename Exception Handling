@@ -1,0 +1,39 @@
+// Exception Handling- this is an an event that occurs during the execution of a program that
+//                      disrupts the normal flow of instructions.
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+import java.io.IOException;
+public class Main {
+    public static void main(String[] args)
+    {
+        try{
+             Scanner scanner = new Scanner(System.in);
+             System.out.println("Enter a number: ");
+             int x = scanner.nextInt();
+
+             System.out.println("Enter a number: ");
+             int y = scanner.nextInt();
+
+             int z = x / y;
+             System.out.println("The division of both numbers is : " + z);
+        }
+        catch(ArithmeticException p) {
+        System.out.println("You can not divide by zero, try again!");
+        }
+        catch(InputMismatchException m){
+            System.out.println("Place a number not a string, try again!");
+        }
+        catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        finally {
+            System.out.println("Bye!");
+        }
+
+
+
+    }
+}
+
+
